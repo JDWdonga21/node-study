@@ -1,12 +1,18 @@
 // npm init 이 프로젝트는 npm 프로젝트이다 npm rank 순위 확인해봐라!
 //서버는 폴더 관리다!
 
+// 서버 안에서 api는 주소를 뜻한다. get, post
+
 //express 쓰자 npm install express
 const express = require('express');
 const helmet = require('helmet');
 const app = express(); // express는 함수 형태이고 서버를 만들 때 필요한 것들을 리턴한다.
 // 보안 npm install helmet 
 app.use(helmet()); // use? 미들웨어 : 사이트 -> 요청 -> 미들웨어(middleware()) -> node.js
+
+//post 방식은 인코딩이 필요함
+app.use(express.json());
+app.use(express.urlencoded());
 
 const mainRouter = require('./router/mainRouter');
 app.use('/',mainRouter);
