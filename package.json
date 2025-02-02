@@ -1,0 +1,11 @@
+{
+  "name": "node-study",
+  "version": "1.0.0",
+  "description": "class101 웹개발 백엔드",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jdw",
+  "license": "ISC"
+}
