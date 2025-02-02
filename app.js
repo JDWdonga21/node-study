@@ -8,15 +8,22 @@ const app = express(); // express는 함수 형태이고 서버를 만들 때 �
 // 보안 npm install helmet 
 app.use(helmet()); // use? 미들웨어 : 사이트 -> 요청 -> 미들웨어(middleware()) -> node.js
 
+const mainRouter = require('./router/mainRouter');
+app.use('/',mainRouter);
+// app.use('별도로 설정 가능',mainRouter);
 
-// 주소를 만듬
-app.get("/", function(req, res){
-    res.send('Hello Would1');
-})
-// about 화면
-app.get("/about", function(req, res){
-    res.send('안녕하세요. 소개입니다.');
-})
+
+// // 주소를 만듬
+// app.get("/", function(req, res){
+//     res.send('Hello Would1');
+// })
+// // about 화면
+// app.get("/about", function(req, res){
+//     res.send('안녕하세요. 소개입니다.');
+// })
+
+
+
 // 3000번 포트 서버 실행
 app.listen(3000, function(req, res){
     console.log("서버가 실행되었다.");
