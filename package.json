@@ -9,6 +9,8 @@
   "author": "jdw",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "supervisor": "^0.12.0"
   }
 }
