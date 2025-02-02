@@ -7,6 +7,14 @@
 const express = require('express');
 const helmet = require('helmet');
 const app = express(); // express는 함수 형태이고 서버를 만들 때 필요한 것들을 리턴한다.
+const ejs = require("ejs"); //ejs가 필요함
+
+// 확장자 명이 ejs인 html 파일을 만들면 된다.
+app.set('view engine', 'ejs');
+app.set('views', './views');
+// /public을 쓰면 __dirname+ '/public' 여기서 가져와라! 규칙을 만든 것
+app.use('/public', express.static(__dirname+ '/public'));
+
 // 보안 npm install helmet 
 app.use(helmet()); // use? 미들웨어 : 사이트 -> 요청 -> 미들웨어(middleware()) -> node.js
 

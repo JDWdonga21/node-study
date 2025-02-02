@@ -3,7 +3,10 @@ const router = express.Router();
 
 // 주소를 만듬
 router.get("/", function(req, res){
-    res.send('Hello Would1');
+    // res.send('Hello Would1');
+    // 서버에서 데이터를 같이 프론트로 넘길 수 있음.
+    res.render('index', {title : '메인 화면'}); //app.js view 파일 위치를 지정해두었기에 이름만 적으면 됨됨
+    // res.render('admin/index'); 
 })
 // about 화면
 router.get("/about", function(req, res){
